@@ -1,6 +1,6 @@
 const PassengerPlane = require('./planes/passengerPlane');
 const MilitaryPlane = require('./planes/militaryPlane');
-const militaryType = require('./models/militaryType');
+const MilitaryType = require('./models/militaryType');
 const ExperimentalPlane = require('./planes/experimentalPlane');
 
 class Airport {
@@ -53,7 +53,7 @@ class Airport {
     let transportMilitaryPlanes = [];
     let militaryPlanes = this.getMilitaryPlanes();
     for (let i = 0; i < militaryPlanes.length; i++) {
-      if (militaryPlanes[i].getMilitaryType() === militaryType.transport) {
+      if (militaryPlanes[i].getMilitaryType() === MilitaryType.TRANSPORT) {
         transportMilitaryPlanes.push(militaryPlanes[i]);
       }
     }
@@ -64,7 +64,7 @@ class Airport {
     let bomberMilitaryPlanes = [];
     let militaryPlanes = this.getMilitaryPlanes();
     for (let i = 0; i < militaryPlanes.length; i++) {
-      if (militaryPlanes[i].getMilitaryType() === militaryType.bomber) {
+      if (militaryPlanes[i].getMilitaryType() === MilitaryType.BOMBER) {
         bomberMilitaryPlanes.push(militaryPlanes[i]);
       }
     }
